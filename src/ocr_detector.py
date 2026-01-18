@@ -1,4 +1,10 @@
-from paddleocr import PaddleOCR
+try:
+    from paddleocr import PaddleOCR
+    PADDLE_AVAILABLE = True
+except Exception as e:
+    print("⚠️ PaddleOCR unavailable — using dummy OCR in Colab:", e)
+    PADDLE_AVAILABLE = False
+
 import numpy as np
 from typing import List, Dict
 
@@ -77,3 +83,4 @@ class OCRDetector:
         
         # Return first 100 chars
         return all_text[:100]
+
