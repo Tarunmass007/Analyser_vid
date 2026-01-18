@@ -17,12 +17,15 @@ class OCRDetector:
     Extracts text overlays and captions
     """
     
-    def __init__(self, config):
-        self.config = config
-        if PADDLE_AVAILABLE:
-            self.ocr = PaddleOCR(lang="en")
-        else:
-            self.ocr = None
+    class OCRDetector:
+        def __init__(self, config):
+            self.config = config
+    
+            if PADDLE_AVAILABLE:
+                self.ocr = PaddleOCR(lang="en")
+            else:
+                self.ocr = None
+
         print("Initializing PaddleOCR...")
         self.ocr = PaddleOCR(
             use_angle_cls=True,
@@ -33,6 +36,12 @@ class OCRDetector:
         print("✓ PaddleOCR loaded")
     
     def extract_text(self, frames: List[Dict]) -> Dict:
+        if not PADDLE_AVAILABLE:
+            return {
+                "overlay_count": 0,
+                "text_timeline": []
+            }
+
         """
         Extract text from video frames
         
@@ -42,11 +51,6 @@ class OCRDetector:
         Returns:
             Dictionary with text timeline and overlay count
         """
-        if not PADDLE_AVAILABLE:
-            return {
-                "overlay_count": 0,
-                "text_timeline": []
-            }
 
         text_timeline = {}
         total_text_instances = 0
@@ -94,6 +98,7 @@ class OCRDetector:
         
         # Return first 100 chars
         return all_text[:100]
+
 
 
 
