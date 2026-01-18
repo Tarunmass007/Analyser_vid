@@ -1,0 +1,30 @@
+excel:
+  input_path: data/Video_Coding_Sheet.xlsx
+  main_sheet: Coding_TouristUCG
+  output_path: output/coded_videos.xlsx
+  taxonomy_sheet: Refined_Lists
+google_drive:
+  download_videos: false
+  folder_id: 1IybH4QIhUO1sCoijKiYC8GTjbTKpeyuK
+  output_dir: data/videos
+models:
+  device: cuda
+  qwen_model: Qwen/Qwen2-VL-7B-Instruct
+  use_fp16: true
+  whisper_model: base
+output:
+  checkpoint_interval: 10
+  incremental_save: true
+  log_file: output/processing_log.txt
+  save_frames: false
+processing:
+  batch_size: 8
+  frame_sampling_interval: 2.0
+  hard_cut_threshold: 30
+  max_frames_per_video: 100
+  parallel_workers: 1
+validation:
+  auto_normalize: true
+  confidence_threshold: 0.6
+  min_attractor_seconds: 0.5
+  strict_mode: false

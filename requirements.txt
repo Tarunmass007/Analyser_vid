@@ -1,0 +1,17 @@
+torch>=2.1.0
+transformers>=4.40.0
+accelerate>=0.29.0
+pillow
+opencv-python
+numpy
+pandas
+openpyxl
+gdown
+scenedetect
+paddlepaddle
+paddleocr
+openai-whisper
+pyyaml
+tqdm
+python-dotenv
+scipy

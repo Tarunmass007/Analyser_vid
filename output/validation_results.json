@@ -1,0 +1,18 @@
+{
+  "timestamp": "1768748666.209612",
+  "checks": {
+    "Python 3.10+": "True",
+    "GPU/CPU detected": "True",
+    "Folder structure": "True",
+    "Excel file present": "True",
+    "Test video present": "True",
+    "Source modules": "True",
+    "Qwen-VL model": "False",
+    "Whisper model": "True",
+    "Processing pipeline": "False",
+    "Excel integration": "True"
+  },
+  "passed": 8,
+  "total": 10,
+  "ready_for_production": false
+}

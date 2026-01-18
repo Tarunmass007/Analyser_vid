@@ -1,0 +1,80 @@
+{
+  "video_id": "a.nanasi_7444134945183845654",
+  "video_path": "c:\\Users\\shree\\OneDrive\\Desktop\\Analyser_vid\\data\\videos\\a.nanasi_7444134945183845654.mp4",
+  "video_file_name": "a.nanasi_7444134945183845654.mp4",
+  "coding_date": "2026-01-18",
+  "duration": 9.07,
+  "fps": 30.0,
+  "resolution": [
+    640,
+    1138
+  ],
+  "audio_type": "Music",
+  "text_overlay_count": 0,
+  "total_cuts": 10,
+  "cuts_per_minute": 66.1521499448732,
+  "attractor_seconds": {
+    "Accommodation": 0.4773684210526316,
+    "Architecture & Heritage": 0.4773684210526316,
+    "Climate": 0.4773684210526316,
+    "Cultural Attractions": 0.4773684210526316,
+    "Events, Fairs & Festivals": 0.4773684210526316,
+    "Food & Drink": 0.4773684210526316,
+    "Infrastructure & Transportation": 0.4773684210526316,
+    "Landscape & Natural Resources": 0.4773684210526316,
+    "Leisure Attractions": 0.4773684210526316,
+    "Local Culture & History": 0.4773684210526316,
+    "Local Lifestyle": 0.4773684210526316,
+    "Nightlife": 0.4773684210526316,
+    "Political & Economic Factors": 0.4773684210526316,
+    "Safety": 0.4773684210526316,
+    "Service": 0.4773684210526316,
+    "Shopping": 0.4773684210526316,
+    "Sports": 0.4773684210526316,
+    "Tourism Products & Packages": 0.4773684210526316,
+    "Wellness": 0.4773684210526316
+  },
+  "subcategories": {},
+  "places": {},
+  "narrative_visual": {
+    "AE": 9.07,
+    "LI": 0,
+    "IN": 0,
+    "CR": 0
+  },
+  "narrative_audio": {
+    "AE": 9.07,
+    "LI": 0,
+    "IN": 0,
+    "CR": 0
+  },
+  "narrative_text": {
+    "AE": 9.07,
+    "LI": 0,
+    "IN": 0,
+    "CR": 0
+  },
+  "tags_visual": {},
+  "tags_audio": {},
+  "tags_text": {},
+  "scores_visual": {
+    "AE": 100.0,
+    "LI": 0.0,
+    "IN": 0.0,
+    "CR": 0.0
+  },
+  "scores_audio": {
+    "AE": 100.0,
+    "LI": 0.0,
+    "IN": 0.0,
+    "CR": 0.0
+  },
+  "scores_text": {
+    "AE": 100.0,
+    "LI": 0.0,
+    "IN": 0.0,
+    "CR": 0.0
+  },
+  "status": "success",
+  "processing_time": "2026-01-18T00:19:33.323810"
+}
