@@ -39,7 +39,12 @@ class OCRDetector:
         Returns:
             Dictionary with text timeline and overlay count
         """
-        
+        if not PADDLE_AVAILABLE:
+            return {
+                "overlay_count": 0,
+                "text_timeline": []
+            }
+
         text_timeline = {}
         total_text_instances = 0
         
@@ -86,5 +91,6 @@ class OCRDetector:
         
         # Return first 100 chars
         return all_text[:100]
+
 
 
