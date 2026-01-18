@@ -16,7 +16,10 @@ class OCRDetector:
     
     def __init__(self, config):
         self.config = config
-        
+        if PADDLE_AVAILABLE:
+            self.ocr = PaddleOCR(lang="en")
+        else:
+            self.ocr = None
         print("Initializing PaddleOCR...")
         self.ocr = PaddleOCR(
             use_angle_cls=True,
@@ -83,4 +86,5 @@ class OCRDetector:
         
         # Return first 100 chars
         return all_text[:100]
+
 
