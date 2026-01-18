@@ -25,11 +25,11 @@ class OCRDetector:
             self.ocr = None  
         print("Initializing PaddleOCR...")
         self.ocr = PaddleOCR(
-            use_angle_cls=True,
-            lang='en',
-            show_log=False,
-            use_gpu=config.device == 'cuda'
+        use_angle_cls=True,
+        lang='en',
+        use_gpu=(config.device == 'cuda')
         )
+
         print("✓ PaddleOCR loaded")
     
     def extract_text(self, frames: List[Dict]) -> Dict:
@@ -39,6 +39,7 @@ class OCRDetector:
                 "overlay_count": 0,
                 "has_text": False
             }
+
 
         """
         Extract text from video frames
@@ -96,6 +97,7 @@ class OCRDetector:
         
         # Return first 100 chars
         return all_text[:100]
+
 
 
 
