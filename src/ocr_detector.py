@@ -23,14 +23,14 @@ class OCRDetector:
             self.ocr = PaddleOCR(lang="en")
         else:
             self.ocr = None  
-        # print("Initializing PaddleOCR...")
-        # self.ocr = PaddleOCR(
-        #     use_angle_cls=True,
-        #     lang='en',
-        #     show_log=False,
-        #     use_gpu=config.device == 'cuda'
-        # )
-        # print("✓ PaddleOCR loaded")
+        print("Initializing PaddleOCR...")
+        self.ocr = PaddleOCR(
+            use_angle_cls=True,
+            lang='en',
+            show_log=False,
+            use_gpu=config.device == 'cuda'
+        )
+        print("✓ PaddleOCR loaded")
     
     def extract_text(self, frames: List[Dict]) -> Dict:
         if not PADDLE_AVAILABLE:
@@ -96,5 +96,6 @@ class OCRDetector:
         
         # Return first 100 chars
         return all_text[:100]
+
 
 
