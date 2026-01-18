@@ -1,4 +1,12 @@
-from paddleocr import PaddleOCR
+# --------- COLAB-SAFE OCR WRAPPER ---------
+try:
+    from paddleocr import PaddleOCR
+    PADDLE_AVAILABLE = True
+except Exception as e:
+    print("⚠️ PaddleOCR DISABLED in this environment (Colab-safe mode):", e)
+    PADDLE_AVAILABLE = False
+# ------------------------------------------
+
 import numpy as np
 from typing import List, Dict
 
@@ -7,18 +15,22 @@ class OCRDetector:
     On-screen text detection using PaddleOCR
     Extracts text overlays and captions
     """
-    
+
     def __init__(self, config):
         self.config = config
-        
-        print("Initializing PaddleOCR...")
-        self.ocr = PaddleOCR(
-            use_angle_cls=True,
-            lang='en',
-            show_log=False,
-            use_gpu=config.device == 'cuda'
-        )
-        print("✓ PaddleOCR loaded")
+
+        if PADDLE_AVAILABLE:
+            self.ocr = PaddleOCR(lang="en")
+        else:
+            self.ocr = None  
+        # print("Initializing PaddleOCR...")
+        # self.ocr = PaddleOCR(
+        #     use_angle_cls=True,
+        #     lang='en',
+        #     show_log=False,
+        #     use_gpu=config.device == 'cuda'
+        # )
+        # print("✓ PaddleOCR loaded")
     
     def extract_text(self, frames: List[Dict]) -> Dict:
         """
@@ -77,3 +89,4 @@ class OCRDetector:
         
         # Return first 100 chars
         return all_text[:100]
+
